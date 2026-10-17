@@ -6,3 +6,38 @@
 @media(max-width:850px){.topbar{left:4%;width:92%}.section-pad{padding-left:7%;padding-right:7%}.hero-copy{left:7%;width:48vw}.hero h1{font-size:clamp(64px,10vw,94px)}.hero-shade{background:linear-gradient(90deg,#061d22 0%,#061d22ed 24%,#061d22a8 45%,#061d2220 76%,transparent 100%),linear-gradient(0deg,#061d22 0%,transparent 22%)}.build-label,.viewer-tools,.build-status{right:5%}.hero-scroll{left:7%}.feature-card{padding:19px;min-height:265px}.note-coord{font-size:6px}}
 @media(max-width:600px){.topbar{top:12px;height:56px;padding:0 9px 0 12px}.brand{font-size:14px}.brand-mark{width:31px;height:31px}.topbar nav{display:none}.header-join{padding:10px 14px;font-size:9px}.hero{height:900px;height:100svh;min-height:740px}.hero-shade{background:linear-gradient(180deg,#061d2242 0%,#061d221c 39%,#061d22b8 56%,#061d22 79%),linear-gradient(90deg,#061d2240,transparent)}#schematic-scene{height:62%;top:7%;bottom:auto}.hero-copy{top:auto;bottom:120px;left:7%;transform:none;width:86%}.status-pill{font-size:7px;padding:8px 11px}.hero h1{margin:17px 0 11px;font-size:clamp(59px,15vw,84px)}.hero-copy>p{max-width:300px;font-size:11px}.primary-button{margin-top:18px;padding:13px 16px 13px 18px}.hero-server{margin-top:19px;font-size:7px}.hero-scroll{display:none}.build-label{top:77px;bottom:auto;right:5%;font-size:7px;padding:9px 11px}.build-label small{display:none}.build-status{top:116px;left:auto;right:5%;font-size:7px}.viewer-tools{right:5%;bottom:46px;gap:6px}.viewer-tools button{width:32px;height:32px}.viewer-tools>span{font-size:6px}.section-pad{padding-left:6%;padding-right:6%}.world-section{margin-top:-20px;border-radius:27px 27px 0 0;padding-top:69px;padding-bottom:74px}.section-tag{font-size:6px}.world-intro{grid-template-columns:1fr;gap:22px;padding:39px 0 32px}.world-intro h2,.features-heading h2{font-size:clamp(48px,13vw,68px)}.intro-copy{max-width:none}.intro-copy p{font-size:11px}.world-note{align-items:flex-start;padding:17px 16px;border-radius:21px;gap:12px}.note-icon{width:38px;height:38px;font-size:17px}.world-note strong{font-size:11px}.world-note p{font-size:9px}.note-coord{display:none}.features-section{padding-top:70px;padding-bottom:75px}.features-heading{display:block;padding:39px 0 25px}.features-heading>p{margin:17px 0 0;font-size:10px}.feature-grid{grid-template-columns:1fr;gap:10px}.feature-card{min-height:206px;padding:18px 20px;border-radius:22px}.card-icon{margin-top:23px;width:40px;height:40px;font-size:20px;border-radius:14px}.feature-card h3{margin:12px 0 6px;font-size:14px}.feature-card p{font-size:9px}.join-section{padding-top:51px;padding-bottom:51px}.join-card{min-height:500px;padding:57px 18px 19px;border-radius:29px}.join-content h2{font-size:clamp(58px,15vw,78px)}.join-content>p:not(.eyebrow){font-size:10px}.join-orb{width:340px;height:340px}.orb-two{width:480px;height:480px}.join-card-bottom{font-size:6px}.join-card-bottom span:nth-child(2){display:none}.footer{height:70px;padding:0 6%}.footer>span{font-size:6px}.footer>span:nth-child(2){display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* Shared icon language and a little more scale in the main content. */
+.icon{width:18px;height:18px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icon-arrow{width:16px;height:16px;stroke-width:1.9}
+.icon-down{width:17px;height:17px;stroke-width:1.9}
+.icon-feature{width:34px;height:34px;stroke-width:1.55}
+.header-join{display:inline-flex;align-items:center;gap:9px;padding:12px 18px 12px 21px;font-size:11px}
+.header-join .icon{margin-left:3px}
+.hero h1{font-size:clamp(72px,9.3vw,128px)}
+.hero-copy>p{font-size:14px;max-width:390px}
+.primary-button{padding:16px 19px 16px 23px;font-size:12px}
+.hero-server{font-size:9px}
+.viewer-tools button{width:40px;height:40px;display:grid;place-items:center;box-shadow:0 7px 24px #00131245}
+.viewer-tools button .icon{width:17px;height:17px}
+.viewer-tools>span{font-size:8px}
+.build-status{font-size:9px;padding:10px 15px}
+.world-intro h2,.features-heading h2{font-size:clamp(56px,7.2vw,90px)}
+.intro-copy p{font-size:13px}
+.world-note{padding:25px 29px;border:1px solid #315c4512;box-shadow:0 12px 32px #244a3510}
+.note-icon{width:54px;height:54px}
+.note-icon .icon{width:23px;height:23px;stroke-width:1.45}
+.world-note strong{font-size:14px}
+.world-note p{font-size:11px}
+.feature-grid{gap:17px}
+.feature-card{min-height:294px;padding:25px 27px 28px;border-radius:28px;box-shadow:0 18px 40px #03151418}
+.card-icon{width:62px;height:62px;margin-top:38px;border-radius:21px}
+.feature-card h3{font-size:18px;margin-top:18px}
+.feature-card p{font-size:11px;max-width:260px}
+.join-button{min-width:238px;padding:17px 19px 17px 23px;font-size:11px}
+.join-button .icon{width:18px;height:18px}
+.join-card{box-shadow:0 28px 70px #0419174d}
+.join-card-bottom .icon{width:12px;height:12px}
+.brand-mark-icon{display:block;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:850px){.hero h1{font-size:clamp(67px,10.5vw,100px)}.feature-card{min-height:286px;padding:22px}.card-icon{width:56px;height:56px}.feature-card h3{font-size:16px}}
+@media(max-width:600px){.hero h1{font-size:clamp(62px,16vw,88px)}.hero-copy>p{font-size:12px}.hero-server{font-size:7px}.viewer-tools button{width:35px;height:35px}.viewer-tools>span{font-size:6px}.world-intro h2,.features-heading h2{font-size:clamp(51px,14vw,72px)}.intro-copy p{font-size:12px}.world-note{padding:18px 16px}.note-icon{width:42px;height:42px}.note-icon .icon{width:20px;height:20px}.world-note strong{font-size:12px}.world-note p{font-size:10px}.feature-grid{gap:12px}.feature-card{min-height:226px;padding:20px 21px;border-radius:24px}.card-icon{width:48px;height:48px;margin-top:24px;border-radius:17px}.icon-feature{width:28px;height:28px}.feature-card h3{font-size:15px;margin:13px 0 7px}.feature-card p{font-size:10px}}

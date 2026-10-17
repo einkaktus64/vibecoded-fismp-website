@@ -249,7 +249,7 @@ async function loadSchematic() {
   controls.target.set(center.x - sphere.radius * 0.29, center.y, center.z);
   const verticalHalfFov = THREE.MathUtils.degToRad(camera.fov / 2);
   const horizontalHalfFov = Math.atan(Math.tan(verticalHalfFov) * camera.aspect);
-  const distance = Math.max(sphere.radius / Math.sin(Math.min(verticalHalfFov, horizontalHalfFov)) * 1.08, 65);
+  const distance = Math.max(sphere.radius / Math.sin(Math.min(verticalHalfFov, horizontalHalfFov)) * 0.94, 65);
   const viewDirection = new THREE.Vector3(0.62, 0.39, 0.68).normalize();
   camera.position.copy(controls.target).addScaledVector(viewDirection, distance);
   camera.near = Math.max(0.1, distance / 200);
@@ -258,6 +258,7 @@ async function loadSchematic() {
   controls.minDistance = sphere.radius * 1.12;
   controls.maxDistance = sphere.radius * 4.8;
   controls.update();
+  controls.saveState();
   status.textContent = `${width} × ${height} × ${length} BLOCKS  ·  ${renderedBlocks.toLocaleString()} PLACED`;
 }
 
@@ -274,7 +275,7 @@ function resize() {
     const sphere = bounds.getBoundingSphere(new THREE.Sphere());
     const verticalHalfFov = THREE.MathUtils.degToRad(camera.fov / 2);
     const horizontalHalfFov = Math.atan(Math.tan(verticalHalfFov) * camera.aspect);
-    const distance = Math.max(sphere.radius / Math.sin(Math.min(verticalHalfFov, horizontalHalfFov)) * 1.08, 65);
+    const distance = Math.max(sphere.radius / Math.sin(Math.min(verticalHalfFov, horizontalHalfFov)) * 0.94, 65);
     camera.position.copy(controls.target).addScaledVector(new THREE.Vector3(0.62, 0.39, 0.68).normalize(), distance);
   }
 }
@@ -299,16 +300,21 @@ loadSchematic().catch((error) => {
 });
 
 const rotateButton = document.querySelector('#toggle-rotate');
+function updateRotateIcon() {
+  rotateButton.querySelector('svg').innerHTML = controls.autoRotate
+    ? '<path d="M9 5v14M15 5v14" />'
+    : '<path d="m8 5 11 7-11 7V5Z" />';
+}
 rotateButton.addEventListener('click', () => {
   controls.autoRotate = !controls.autoRotate;
-  rotateButton.textContent = controls.autoRotate ? 'Ⅱ' : '▶';
+  updateRotateIcon();
   rotateButton.setAttribute('aria-label', controls.autoRotate ? 'Pause automatic rotation' : 'Resume automatic rotation');
   rotateButton.title = controls.autoRotate ? 'Pause rotation' : 'Resume rotation';
 });
 document.querySelector('#reset-view').addEventListener('click', () => {
   controls.reset();
   controls.autoRotate = true;
-  rotateButton.textContent = 'Ⅱ';
+  updateRotateIcon();
 });
 
 const observer = new IntersectionObserver((entries) => {
