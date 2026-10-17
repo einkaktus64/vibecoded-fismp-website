@@ -65,3 +65,13 @@
 @media(max-width:850px){.world-art-sea{width:92vw;right:-18%;opacity:.19}.features-art-crab{right:-9%}}
 @media(max-width:600px){.world-art-sea{width:145vw;height:66%;top:26%;right:-54%;opacity:.15}.world-art-starfish{width:115px;left:-22px;bottom:4%;opacity:.17}.world-art-seahorses{width:125px;right:-28px;top:2%;opacity:.12}.features-art-crab{width:245px;right:-100px;top:2%;opacity:.11}.features-art-bass{width:300px;left:-160px;bottom:3%;opacity:.12}.features-art-octopus{width:110px;right:-9px;bottom:15%;opacity:.1}.feature-card{backdrop-filter:blur(4px)}.join-whale{width:145vw;height:65%;right:-36%;bottom:-2%;opacity:.19}.join-card:before{background:linear-gradient(180deg,#0730361a 30%,#04252c26 65%,#06252e75)} }
 @media(prefers-reduced-motion:reduce){.ambient-art img,.join-whale{will-change:auto}}
+.reveal-from-left:not(.is-visible){transform:translate3d(-28px,0,0)}
+.reveal-from-right:not(.is-visible){transform:translate3d(28px,0,0)}
+.reveal-scale:not(.is-visible){transform:scale(.965)}
+.section-tag.reveal{transition-delay:.04s}
+.world-intro .reveal-from-right{transition-delay:.13s}
+.world-note.reveal{transition-delay:.21s}
+.features-heading.reveal{transition-delay:.1s}
+.feature-card:nth-child(2){transition-delay:.18s}
+.feature-card:nth-child(3){transition-delay:.32s}
+@media(prefers-reduced-motion:reduce){.reveal-from-left,.reveal-from-right,.reveal-scale{opacity:1;transform:none!important;transition-duration:.01ms!important}}
