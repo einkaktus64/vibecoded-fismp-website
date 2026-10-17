@@ -327,6 +327,30 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 
+// Keep the scenic schematic renders gently embedded in the page as it scrolls.
+const parallaxArtwork = [...document.querySelectorAll('.parallax-art')];
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let parallaxFrame = 0;
+function updateParallax() {
+  parallaxFrame = 0;
+  if (reduceMotion.matches) return;
+  for (const artwork of parallaxArtwork) {
+    const rect = artwork.parentElement.getBoundingClientRect();
+    if (rect.bottom < -120 || rect.top > window.innerHeight + 120) continue;
+    const distanceFromCenter = rect.top + rect.height / 2 - window.innerHeight / 2;
+    const strength = 0.055;
+    const offset = Math.max(-26, Math.min(26, -distanceFromCenter * strength));
+    artwork.style.setProperty('--parallax-shift', `${offset.toFixed(1)}px`);
+  }
+}
+function requestParallaxUpdate() {
+  if (!parallaxFrame) parallaxFrame = requestAnimationFrame(updateParallax);
+}
+window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+window.addEventListener('resize', requestParallaxUpdate);
+reduceMotion.addEventListener?.('change', requestParallaxUpdate);
+requestParallaxUpdate();
+
 const copyButton = document.querySelector('#copy-ip');
 const feedback = document.querySelector('.copy-feedback');
 copyButton.addEventListener('click', async () => {

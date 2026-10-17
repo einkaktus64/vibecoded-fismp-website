@@ -1,6 +1,6 @@
 # FiSMP Website
 
-A Vite landing page for the FiSMP Minecraft server, built with Tailwind CSS 4 and Three.js. Its interactive hero loads `guardian-reimagined-by-lolochee.schem` and renders the real Sponge v3 schematic with instanced block geometry, pixel textures, orbit, and zoom controls. The Join button copies `fismp.run.place`.
+A Vite landing page for the FiSMP Minecraft server, built with Tailwind CSS 4 and Three.js. Its interactive hero loads `guardian-reimagined-by-lolochee.schem` and renders the Sponge schematic with instanced block geometry, orbit, and zoom controls. Transparent renders from selected schematics are blended into the world, features, and join sections as atmospheric background art. The Join button copies `fismp.run.place`.
 
 ## Run locally
 
